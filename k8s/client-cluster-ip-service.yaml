@@ -1,0 +1,11 @@
+apiVersion: apps/v1
+kind: Service
+metada:
+    name: client-cluster-ip-Service
+spec:                               #customization of the Service
+    type: clusterIP                   #type of Cluster IP
+    selector:
+        component: web
+    ports:
+        - port: 3000           #port to incoming traffic
+        targetPort: 3000       #port for acessing the Pod with the selector label
