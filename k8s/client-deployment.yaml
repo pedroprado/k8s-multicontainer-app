@@ -1,6 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
-metada:
+metadata:
     name: client-deployment
 spec:                        #this tells the customization of the Deployment
     replicas: 3              #number os pods
@@ -8,7 +8,7 @@ spec:                        #this tells the customization of the Deployment
         matchLabels:
             component: web   #key value pairs that identify the Pods
     template:                #the template for the Pods
-        metada:
+        metadata:
             labels:
                 component: web
         spec:                #customization 

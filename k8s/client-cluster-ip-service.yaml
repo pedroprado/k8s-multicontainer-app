@@ -1,6 +1,6 @@
-apiVersion: apps/v1
+apiVersion: v1
 kind: Service
-metada:
+metadata:
     name: client-cluster-ip-Service
 spec:                               #customization of the Service
     type: clusterIP                   #type of Cluster IP
