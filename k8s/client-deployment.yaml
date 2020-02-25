@@ -2,16 +2,16 @@ apiVersion: apps/v1
 kind: Deployment
 metada:
     name: client-deployment
-spec:
-    replicas: 3
-    selector:
+spec:                        #this tells the customization of the Deployment
+    replicas: 3              #number os pods
+    selector:                #identify the Pods that the Deployment is suposed to manage
         matchLabels:
-            component: web
-    template:
+            component: web   #key value pairs that identify the Pods
+    template:                #the template for the Pods
         metada:
             labels:
                 component: web
-        spec:
+        spec:                #customization 
             containers:
                 - name: client
                 image: phsprado/complex-client
