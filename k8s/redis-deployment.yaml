@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: redis-deployment
+spec:     #customization of the Deployment
+    replicas: 1
+    selector:
+        matchLabels:
+            component: redis
+    template:     #pods template
+        metadata:
+            labels:
+                component: redis
+        spec:     #customization of the Pods
+            containers:
+                - name: redis
+                image: redis
+                ports:
+                    - containerPort: 6379

@@ -1,20 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-   name: client-deployment
+   name: server-deployment
 spec:                        #this tells the customization of the Deployment
     replicas: 3              #number os pods
     selector:                #identify the Pods that the Deployment is suposed to manage
         matchLabels:
-            component: web   #key value pairs that identify the Pods
+            component: server   #key value pairs that identify the Pods
     template:                #the template for the Pods
         metadata:
             labels:
-                component: web
+                component: server
         spec:                #customization 
             containers:
-                - name: client
-                image: phsprado/complex-client
+                - name: server
+                image: phsprado/complex-server
                 ports:
-                    - containerPort: 3000
-
+                    - containerPort: 5000

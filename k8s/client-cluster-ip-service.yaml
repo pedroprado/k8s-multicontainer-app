@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-    name: client-cluster-ip-Service
+  name: client-cluster-ip-service
 spec:                               #customization of the Service
-    type: clusterIP                   #type of Cluster IP
-    selector:
-        component: web
-    ports:
-        - port: 3000           #port to incoming traffic
-        targetPort: 3000       #port for acessing the Pod with the selector label
+  type: ClusterIP                   #type of Cluster IP
+  elector:
+      component: web
+  ports:
+      - port: 3000           #port to incoming traffic
+      targetPort: 3000       #port for acessing the Pod with the selector label
