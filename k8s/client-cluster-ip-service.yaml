@@ -4,8 +4,8 @@ metadata:
   name: client-cluster-ip-service
 spec:                               #customization of the Service
   type: ClusterIP                   #type of Cluster IP
-  elector:
-      component: web
+  selector:
+    component: web
   ports:
-      - port: 3000           #port to incoming traffic
+    - port: 3000           #port to incoming traffic
       targetPort: 3000       #port for acessing the Pod with the selector label
